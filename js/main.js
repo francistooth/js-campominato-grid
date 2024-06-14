@@ -12,4 +12,5 @@ let msg = "error message! no option selected";
 
 addEventListener("submit", function(){
    spawnGrid(select.value);
+   this.event.preventDefault();
 });

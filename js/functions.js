@@ -1,7 +1,7 @@
 function spawnGrid(diff) {
    const box = document.getElementById('box');
-
-   switch (diff) {
+   box.classList.remove('h-80');
+   switch (parseInt(diff)) {
       case 1: 
          cycleGrid(box, 10, 10);
          break;
@@ -17,6 +17,8 @@ function spawnGrid(diff) {
 }
 
 function cycleGrid(box, r, c) {
+   let counter = 0;
+
    for (let i = 0; i < r; i++) {
       let row = document.createElement("div");
       row.classList.add('row');
@@ -24,7 +26,9 @@ function cycleGrid(box, r, c) {
       
       for (let j = 0; j < c; j++) {
          let square = document.createElement("div");
-         square.classList.add('square', 'd-flex', 'justify-content-center', 'align-items-center')
+         square.classList.add('square', 'd-flex', 'justify-content-center', 'align-items-center');
+         square.innerHTML = counter + 1;
+         counter++;
          row.appendChild(square);
       }
 
